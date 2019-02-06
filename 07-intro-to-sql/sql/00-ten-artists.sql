@@ -1,3 +1,7 @@
 SELECT *
 FROM artists
-LIMIT 10;
+LIMIT 3;
+
+SELECT *
+FROM albums
+LIMIT 3;
