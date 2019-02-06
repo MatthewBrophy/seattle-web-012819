@@ -51,6 +51,39 @@ After each challenge, check the database structure to verify that the changes we
 
 When you get to problem four, ask students about relationships between tables and cover the definition of relational databases.
 
+### Example SQL CRUD
+```SQL
+CREATE TABLE cats (
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  age INTEGER,
+  breed TEXT,
+  owner_id INTEGER
+);
+```
+
+```SQL
+INSERT INTO cats (name, age, breed, owner_id)
+VALUES ("Maru", 3, "Scottish Fold", 1);
+```
+
+```SQL
+UPDATE cats
+SET name = "Boom"
+WHERE name = "Maru";
+```
+
+```SQL
+DELETE from cats
+WHERE owner_id = 14;
+```
+
+```SQL
+SELECT *
+FROM cats
+WHERE owner_id = 1;
+```
+
 ## Challenges
 
 1. Write the SQL to return all of the rows in the artists table?
