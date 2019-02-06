@@ -25,6 +25,24 @@ Some specific actions that we can do are CRUD actions, a common acronym we'll se
 * Update data
 * Delete data
 
+### Configure SQLite Locally
+
+Run these commands in your terminal to configure SQLite to look a bit
+better on your machine.
+
+```bash
+echo ".headers on" >> ~/.sqliterc
+echo ".mode column" >> ~/.sqliterc
+```
+
+Write SQL queries in files and then run the files as input to SQLite.
+
+```
+touch 00-select_ten_artists.sql
+echo "SELECT * FROM artists LIMIT 10;"
+sqlite3 ./chinook.db < 00-select_ten_artists.sql
+```
+
 ### Practice SQL CRUD
 
 Investigate the schema of the database; the structure of the database. If in the command line, use `.schema`, if in browser, use "Database Structure" tab.
