@@ -53,7 +53,7 @@
   1     Earth
   2     LV-426
   3     Pandora
-  4			Hala
+  4     Hala
   ```
 
 Q: Write the SQL to find all Aliens on Planet "Earth"
