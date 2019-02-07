@@ -1,15 +1,15 @@
 class Task
-  attr_accessor :title, :description
-  @@all = []
+	attr_accessor :title, :description
+	@@all = []
 
-  def self.all
-    @@all
-  end
+	def self.all
+		@@all
+	end
 
-  def initialize(attributes={})
-    @title = attributes['title']
-    @description = attributes['description']
+	def initialize(attributes={})
+		@title = attributes['title']
+		@description = attributes['description']
 
-    @@all << self
-  end
+		@@all << self
+	end
 end

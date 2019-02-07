@@ -29,32 +29,34 @@
 
   ```
 
-3. Squirrels have Nests in Trees -- Build table
+3. Aliens have Populations on Planets -- Build table
 
   ```
-  squirrels
+  aliens
   id |  name
-  1     'chipper'          
-  2     'alvin'   
-  3     'theo'                 
-  4     'simon'            
+  1     'humans'          
+  2     'navi'   
+  3     'xenomorph'                 
+  4     'skrull'            
 
-  nests
-  id |  squirrel_id | tree_id
+  populations
+  id |  alien_id | planet_id
   1     1             1
-  2     2             1
+  2     4             1
   3     3             2
-  4     4             1
-  4     4             2
+  4     1             3
+  5     2             3
+  6     4             4
 
-  trees
+  planets
   id |  name
-  1     apple tree
-  2     christmas tree
-  3     old tree
+  1     Earth
+  2     LV-426
+  3     Pandora
+  4			Hala
   ```
 
-Q: Write the SQL to find all Squirrels in a "christmas tree"
+Q: Write the SQL to find all Aliens on Planet "Earth"
 
 
 ```SQL
@@ -86,7 +88,7 @@ What are the four ways we can interact with Data?
 - db/task_listr.db
 - lib/tasks.rb & lib/tasks_app.rb
 - Rake
-  - Creating a new rake task - `rake -T`
+  - Creating a new rake task
 
 ```
 A task belongs to a user and has some content - must have user_id
