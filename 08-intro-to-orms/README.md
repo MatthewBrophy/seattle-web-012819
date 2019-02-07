@@ -13,19 +13,68 @@
 
 1. Books and Authors where each book has a single author. Books should have a title
 
+  books
+  id | title         | author_id
+  ------------------------------
+  23 | Hyperion      |  63
+  78 | Fall of Endy  |  63
+  92 | Heavy         |  73
+
+
+  authors
+  id | name
+  -------------
+  63 | Dan Simmons
+  73 | Kiese Laymon
+
+
   Q: Write the SQL to find all books written by a certain author given that author's id
 
   ```SQL
-
+  SELECT books.title
+  FROM books
+  JOIN authors
+  ON books.author_id = authors.id
+  WHERE authors.id = 63
   ```
 
 2. Books and Authors where each book can have one or MULTIPLE authors. Books should have a title and authors should have a name.
 
   - What type of relationship is this?
 
+  books
+  id | title         
+  -----------------
+  23 | Hyperion      
+  78 | Fall of Endy 
+  92 | Heavy         
+
+
+  book_authors
+  id | book_id | author_id
+  -------------------------
+  22 |   23    | 63
+  45 |   78    | 63
+  69 |   92    | 73
+  87 |   78    | 73
+
+  authors
+  id | name
+  -------------
+  63 | Dan Simmons
+  73 | Kiese Laymon
+
   Q. Write the SQL to find all books written by certain author given their name
 
   ``` SQL
+  SELECT books.title
+  FROM book_authors
+  JOIN authors
+  ON book_authors.author_id = authors.id
+  JOIN books
+  ON book_authors.book_id = books.id
+  WHERE authors.name = "Dan Simmons"
+  GROUP_BY books.title
 
   ```
 
@@ -69,6 +118,22 @@ Q: Write the SQL to find all Aliens on Planet "Earth"
 ### CRUD REVIEW
 
 What are the four ways we can interact with Data?
+
+Create:
+SQL - CREATE, INSERT
+Ruby - Planet.new, .save, .create
+
+Read:
+SQL - SELECT
+Ruby - attr_readers, .all 
+
+Update:
+SQL - UPDATE, ALTER
+Ruby - attr_writers
+
+Delete:
+SQL - DELETE, DROP
+Ruby - [].delete
 
 ### Active Record Pattern
 

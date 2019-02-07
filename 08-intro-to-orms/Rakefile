@@ -4,3 +4,28 @@ desc 'Loads up a console!'
 task :console do
   Pry.start
 end
+
+desc 'Drops tables in DB'
+task :drop do
+  exec("sqlite3 db/task_listr.db < db/drop.sql")
+end
+
+desc 'Creates tables in DB'
+task :create do
+  exec("sqlite3 db/task_listr.db < db/create.sql")
+end
+
+desc 'Seeds tables in DB'
+task :seed do
+  exec("sqlite3 db/task_listr.db < db/seeds.sql")
+end
+
+desc 'Open DB'
+task :open do
+  exec("sqlite3 db/task_listr.db")
+end
+
+
+
+# Rakefile = Ruby + Makefile
+# Makefile - a file used to automate certain tasks
