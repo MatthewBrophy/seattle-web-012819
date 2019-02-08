@@ -13,97 +13,97 @@
 
 1. Books and Authors where each book has a single author. Books should have a title
 ```
-	books
-	id | title         | author_id
-	------------------------------
-	23 | Hyperion      |  63
-	78 | Fall of Endy  |  63
-	92 | Heavy         |  73
+  books
+  id | title         | author_id
+  ------------------------------
+  23 | Hyperion      |  63
+  78 | Fall of Endy  |  63
+  92 | Heavy         |  73
 
 
-	authors
-	id | name
-	-------------
-	63 | Dan Simmons
-	73 | Kiese Laymon
+  authors
+  id | name
+  -------------
+  63 | Dan Simmons
+  73 | Kiese Laymon
 ```
 
-	Q: Write the SQL to find all books written by a certain author given that author's id
+  Q: Write the SQL to find all books written by a certain author given that author's id
 
-	```SQL
-	SELECT books.title
-	FROM books
-	JOIN authors
-	ON books.author_id = authors.id
-	WHERE authors.id = 63
-	```
+  ```SQL
+  SELECT books.title
+  FROM books
+  JOIN authors
+  ON books.author_id = authors.id
+  WHERE authors.id = 63
+  ```
 
 2. Books and Authors where each book can have one or MULTIPLE authors. Books should have a title and authors should have a name.
 
-	- What type of relationship is this?
+  - What type of relationship is this?
 ```
-	books
-	id | title         
-	-----------------
-	23 | Hyperion      
-	78 | Fall of Endy 
-	92 | Heavy         
+  books
+  id | title         
+  -----------------
+  23 | Hyperion      
+  78 | Fall of Endy 
+  92 | Heavy         
 
 
-	book_authors
-	id | book_id | author_id
-	-------------------------
-	22 |   23    | 63
-	45 |   78    | 63
-	69 |   92    | 73
-	87 |   78    | 73
+  book_authors
+  id | book_id | author_id
+  -------------------------
+  22 |   23    | 63
+  45 |   78    | 63
+  69 |   92    | 73
+  87 |   78    | 73
 
-	authors
-	id | name
-	-------------
-	63 | Dan Simmons
-	73 | Kiese Laymon
+  authors
+  id | name
+  -------------
+  63 | Dan Simmons
+  73 | Kiese Laymon
 ```
-	Q. Write the SQL to find all books written by certain author given their name
+  Q. Write the SQL to find all books written by certain author given their name
 
-	``` SQL
-	SELECT books.title
-	FROM book_authors
-	JOIN authors
-	ON book_authors.author_id = authors.id
-	JOIN books
-	ON book_authors.book_id = books.id
-	WHERE authors.name = "Dan Simmons"
-	GROUP_BY books.title
+  ``` SQL
+  SELECT books.title
+  FROM book_authors
+  JOIN authors
+  ON book_authors.author_id = authors.id
+  JOIN books
+  ON book_authors.book_id = books.id
+  WHERE authors.name = "Dan Simmons"
+  GROUP_BY books.title
 
-	```
+  ```
 
 3. Aliens have Populations on Planets -- Build table
 
-	```
-	aliens
-	id |  name
-	1     'humans'          
-	2     'navi'   
-	3     'xenomorph'                 
-	4     'skrull'            
+  ```
+  aliens
+  id |  name
+  1     'humans'          
+  2     'navi'   
+  3     'xenomorph'                 
+  4     'skrull'            
 
-	populations
-	id |  alien_id | planet_id
-	1     1             1
-	2     4             1
-	3     3             2
-	4     1             3
-	5     2             3
-	6     4             4
+  populations
+  id |  alien_id | planet_id
+  1     1             1
+  2     4             1
+  3     3             2
+  4     1             3
+  5     2             3
+  6     4             4
 
-	planets
-	id |  name
-	1     Earth
-	2     LV-426
-	3     Pandora
-	4     Hala
-	```
+  planets
+  id |  name
+  1     Earth
+  2     LV-426
+  3     Pandora
+  4     Hala
+  ```
 
 Q: Write the SQL to find all Aliens on Planet "Earth"
 
@@ -153,7 +153,7 @@ Ruby - [].delete
 - db/task_listr.db
 - lib/tasks.rb & lib/tasks_app.rb
 - Rake
-	- Creating a new rake task
+  - Creating a new rake task
 
 ```
 A task belongs to a user and has some content - must have user_id
