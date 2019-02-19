@@ -1,3 +1,3 @@
 require_relative './config/environment'
 
-# run something!
+run ApplicationController

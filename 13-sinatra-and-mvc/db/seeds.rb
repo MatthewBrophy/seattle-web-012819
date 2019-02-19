@@ -1,3 +1,3 @@
 Book.destroy_all
 
-Adapter::GoogleBooks.new("Madeline L'Engle").fetch_books
+Adapter::GoogleBooks.new("Dan Simmons").fetch_books
