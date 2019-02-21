@@ -1,3 +1,3 @@
 Book.destroy_all
 
-Adapter::GoogleBooks.new("Dan Simmons").fetch_books
+Adapter::GoogleBooks.new("Dr. Seuss").fetch_books
