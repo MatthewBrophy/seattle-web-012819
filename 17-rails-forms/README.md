@@ -1,0 +1,33 @@
+# Learning Goals
+- Why Rails?
+  - making it easy for us to put code on the internet
+  - tools and helpers to let us type less
+- Why Capybara?
+  - because we have to
+  - to punish students
+  - a cute animal ruined forever
+  - integration tests
+    - instead of just testing one thing (unit) capybabra is testing how our mvc work together
+  - What does Capybara want from us?
+    - can't find ....
+    - looking for specifics: html element id or name matching a string in the test
+- use Rails Generators help to make files your app needs
+  - models => `rails g model fruits name:string`
+    - model, migration
+  - controllers => `rails g controller fruit`
+    - controller
+  - resources => `rails g resource fruits name:string`
+    - model, migration, controller, routes, views directory
+  - `rails d #{generator_name}` when mistake
+- Rails form helpers return strings or html we need to make forms
+  - form_for
+    - requires instances and interacts with their attributes
+    - uses the instance to decide where to send information
+    - assumes the most for you and builds the most
+    - best used with resources you are saving to your DB
+  - form tag
+    - does less for you, but allows more customization
+    - best used with instances that aren't persisted
+- Strong params
+  - Rails is giving us extra protection from injection
+  - data cannot be used for mass assignment in create/update unless params are specifically permitted

@@ -1,0 +1,9 @@
+<ul>  
+  <% @snacks.each do |snack| %>
+  <li>
+    <p>
+      <%= snack.name %>: <%= snack.deliciousness %>
+    </p>
+  </li>
+  <% end  %>
+</ul>
