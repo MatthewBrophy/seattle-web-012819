@@ -1,19 +1,43 @@
 <% if flash[:errors] %>
   <% flash[:errors].each do |message| %>
-    <p><%= message %></p>
+    <p style='color:red'><%= message %></p>
   <% end %>
 <% end %>
 <% if flash[:notice] %>
-  <%= flash[:notice] %>
+  <p style='color:green'>
+    <%= flash[:notice] %>
+  </p>
 <% end %>
 
 <%= form_for(@crew_member) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :position %>
-  <%= f.text_field :position %>
-  <%= f.label :posting_number %>
-  <%= f.number_field :posting_number %>
-  <%= f.collection_select :ship_id, @ships, :id, :name %>
-  <%= f.submit %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+  <div>
+    <%= f.label :posting_number %>
+    <%= f.number_field :posting_number %>
+  </div>
+  <div>
+    <%= f.label :ship %>
+    <%= f.collection_select :ship_id, @ships, :id, :name %>
+  </div>
+  <div>
+    <%= f.label :degrees %>
+    <%= f.collection_check_boxes :degree_ids, Degree.all, :id, :name %>
+  </div>
+  <div>
+    <h5>New Degrees</h5>
+    <%= f.fields_for :degrees, @crew_member.degrees.build do |d| %>
+      <%= d.label :name %>
+      <%= d.text_field :name %>
+    <% end %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
 <% end %>

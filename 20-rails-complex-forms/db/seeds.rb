@@ -19,35 +19,39 @@ Ship.create([
 enterprise = Ship.find_by_name('USS Enterprise (NCC-1701)')
 enterprise_d = Ship.find_by_name('USS Enterprise (NCC-1701-D)')
 
-CrewMember.create([
-  {
+CrewMember.create([{
     name: 'Jean-Luc Picard',
     position: 'Captain',
-    ship: enterprise_d
+    ship: enterprise_d,
+    posting_number: 5
   },{
     name: 'Geordi La Forge',
     position: 'Chief Engineering Officer',
-    ship: enterprise_d
+    ship: enterprise_d,
+    posting_number: 3
   },{
     name: 'Beverly Crusher',
     position: 'Chief Medical Officer',
-    ship: enterprise_d
-  }
-])
+    ship: enterprise_d,
+    posting_number: 3
+  }])
 
 CrewMember.create([
   {
     name: 'James Tiberius Kirk',
     position: 'Captain',
-    ship: enterprise
+    ship: enterprise,
+    posting_number: 6
   },{
     name: 'Montgomery Scott',
     position: 'Chief Engineering Officer',
-    ship: enterprise
+    ship: enterprise,
+    posting_number: 3
   },{
     name: 'Leonard McCoy',
     position: 'Chief Medical Officer',
-    ship: enterprise
+    ship: enterprise,
+    posting_number: 4
   }
 ])
 
@@ -66,11 +70,11 @@ CrewMember.create({
   name: 'Jadzia Dax',
   position: 'Science Officer',
   ship: Ship.create({name: 'Deep Space 9', commission_date: 'January 1, 2376'.to_date}),
-  })
-
+  posting_number: 2
+})
 
 Degree.where({name: ['Astrophysics', 'Exoarchaeology', 'Exobiology', 'Zoology']}).each do |degree|
-  CrewMemberDegrees.create({
+  CrewMemberDegree.create({
     crew_member: CrewMember.find_by_name('Jadzia Dax'),
     degree: degree
   })

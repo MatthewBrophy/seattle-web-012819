@@ -5,23 +5,6 @@ class CrewMembersController < ApplicationController
     @ships = Ship.all
   end
 
-  def new
-    @crew_member = CrewMember.new
-    @ships = Ship.all
-  end
-
-  def create
-    crew_member = CrewMember.new(crew_member_params)
-
-    if crew_member.save
-      flash[:notice] = 'Crew Member Created'
-      redirect to crew_member
-    else
-      flash[:errors] = crew_member.errors.full_messages
-      render :new
-    end
-  end
-
   def update
     @crew_member.update(crew_member_params)
     if @crew_member.valid?
@@ -39,6 +22,6 @@ class CrewMembersController < ApplicationController
   end
 
   def crew_member_params
-    params.require(:crew_member).permit(:name, :position, :posting_number, :ship_id)
+    params.require(:crew_member).permit(:name, :position, :posting_number, :ship_id, degree_ids: [], degrees_attributes: [:name])
   end
 end
