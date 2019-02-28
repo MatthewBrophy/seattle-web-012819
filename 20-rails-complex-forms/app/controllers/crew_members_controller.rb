@@ -5,9 +5,9 @@ class CrewMembersController < ApplicationController
     @ships = Ship.all
   end
 
-  # def show
-  # we don't need this!!!
-  # end
+  def show
+    redirect_to edit_crew_member_path(@crew_member)
+  end
 
   def update
     @crew_member.update(crew_member_params)

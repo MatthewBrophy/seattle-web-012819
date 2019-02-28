@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190227204703) do
+ActiveRecord::Schema.define(version: 20190228161351) do
+
+  create_table "crew_member_degrees", force: :cascade do |t|
+    t.integer  "crew_member_id"
+    t.integer  "degree_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["crew_member_id"], name: "index_crew_member_degrees_on_crew_member_id"
+    t.index ["degree_id"], name: "index_crew_member_degrees_on_degree_id"
+  end
 
   create_table "crew_members", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +29,12 @@ ActiveRecord::Schema.define(version: 20190227204703) do
     t.datetime "updated_at",     null: false
     t.integer  "posting_number"
     t.index ["ship_id"], name: "index_crew_members_on_ship_id"
+  end
+
+  create_table "degrees", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ships", force: :cascade do |t|

@@ -50,3 +50,28 @@ CrewMember.create([
     ship: enterprise
   }
 ])
+
+Degree.create([
+  {name: 'Advanced Theoretical Physics'},
+  {name: 'Command and Control'},
+  {name: 'Engineering'},
+  {name: 'Exoarchaeology'},
+  {name: 'Exobiology'},
+  {name: 'Probability mechanics'},
+  {name: 'Xenolinguistics'},
+  {name: 'Zoology'},
+  ])
+
+CrewMember.create({
+  name: 'Jadzia Dax',
+  position: 'Science Officer',
+  ship: Ship.create({name: 'Deep Space 9', commission_date: 'January 1, 2376'.to_date}),
+  })
+
+
+Degree.where({name: ['Astrophysics', 'Exoarchaeology', 'Exobiology', 'Zoology']}).each do |degree|
+  CrewMemberDegrees.create({
+    crew_member: CrewMember.find_by_name('Jadzia Dax'),
+    degree: degree
+  })
+end

@@ -3,7 +3,9 @@
     <p><%= message %></p>
   <% end %>
 <% end %>
-
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
 
 <%= form_for(@crew_member) do |f| %>
   <%= f.label :name %>
