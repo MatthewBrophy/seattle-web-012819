@@ -1,4 +1,4 @@
-module Decommisionable
+module Decommissionable
   module ClassMethods
 
     private

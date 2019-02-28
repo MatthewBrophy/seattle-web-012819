@@ -5,8 +5,21 @@ class CrewMembersController < ApplicationController
     @ships = Ship.all
   end
 
-  def show
-    redirect_to edit_crew_member_path(@crew_member)
+  def new
+    @crew_member = CrewMember.new
+    @ships = Ship.all
+  end
+
+  def create
+    crew_member = CrewMember.new(crew_member_params)
+
+    if crew_member.save
+      flash[:notice] = 'Crew Member Created'
+      redirect to crew_member
+    else
+      flash[:errors] = crew_member.errors.full_messages
+      render :new
+    end
   end
 
   def update

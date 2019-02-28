@@ -6,6 +6,6 @@
 - redirect render
 
 
-### Follow-Up
+### Follow-Up Questions
 - sessions can be kept through multiple redirects
 - private modules totally work

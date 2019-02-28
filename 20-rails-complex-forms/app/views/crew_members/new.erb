@@ -1,0 +1,19 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<%= form_for(@crew_member) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+  <%= f.label :posting_number %>
+  <%= f.number_field :posting_number %>
+  <%= f.collection_select :ship_id, @ships, :id, :name %>
+  <%= f.submit %>
+<% end %>
