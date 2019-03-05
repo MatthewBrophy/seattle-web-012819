@@ -9,7 +9,12 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @student = Student.new
+    if logged_in?
+      @student = Student.new
+    else
+      flash[:message] = 'Login Sucka'
+      redirect_to login_path
+    end
   end
 
   def create
@@ -24,7 +29,6 @@ class StudentsController < ApplicationController
   end
 
   private
-
   def student_params
     params.require(:student).permit(:name, :email, :cohort_id)
   end

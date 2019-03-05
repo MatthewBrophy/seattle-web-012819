@@ -13,9 +13,8 @@
 - Do I need any additional routes/views/models
 
 2. As an un-authenticated user, I should be able to see a list of students and information about an individual student.
-As an authenticated user I should be able to do all of the above plus create a new user.
+As an authenticated user I should be able to do all of the above plus create a new student.
 If an un-authorized user tries to see the new student form, they should be redirected to the login page.
-
 
 ## Auth
 - authentication
@@ -26,3 +25,15 @@ If an un-authorized user tries to see the new student form, they should be redir
   - permissions, access
   - what pages/routes can the user access
   - do we redirect them on certain pages or 404?
+
+# Steps
+- create user table, model, seed
+- login view, sessions controller, login routes
+- logging out
+  clearing session
+  redirecting to another page
+  surfacing login/logout buttons based on session
+
+
+
+- authorizing create student
