@@ -1,5 +1,10 @@
-<h1>Votes Remaining: 5</h1>
+<h1>Votes Remaining: <%= @votes %></h1>
 
+<% if @notice %>
+  <p class='notice'><%= @notice %></p>
+<% elsif @error %>
+  <p class='error'><%= @error %></p>
+<% end %>
 
 <ul class="colors">
   <% @colors.each do |color| %>
