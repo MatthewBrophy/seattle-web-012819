@@ -26,14 +26,12 @@ If an un-authorized user tries to see the new student form, they should be redir
   - what pages/routes can the user access
   - do we redirect them on certain pages or 404?
 
-# Steps
+## Steps
 - create user table, model, seed
 - login view, sessions controller, login routes
 - logging out
-  clearing session
-  redirecting to another page
-  surfacing login/logout buttons based on session
-
-
-
+  - clearing session
+  - redirecting to another page
+  - surfacing login/logout buttons based on session
 - authorizing create student
+  - redirecting unauthorized users to another page if they try to access
