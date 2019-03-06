@@ -1,0 +1,48 @@
+/********************** SITE-WIDE STYLES **********************/
+/* h1 {
+  color : purple;
+  font-size:50px;
+} */
+
+.headers{
+  color : purple;
+  font-size:50px;
+}
+
+#menu{
+  background : blue;
+  background-image: url(images/ConTree1.jpeg);
+  height : 60;
+}
+
+body{
+  /* padding : 30px;
+  border : 40px solid black;
+  margin : 100px; */
+  /* border-left: 20px solid green; */
+}
+
+/************************* HOME PAGE **************************/
+/************************** TREE FILE ***************************/
+.tree-images{
+  padding : 30px;
+  border : 40px solid black;
+  border-left: 20px solid green;
+  margin : 100px;
+  margin-left : 10px;
+  height : 100px;
+  float : left;
+  clear : both;
+  width : 48%;
+}
+
+.trees{
+  width : 48%;
+}
+
+/************************ IMAGE GALLERY ***********************/
+.gallery-img{
+  display : grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap :20px;
+}
