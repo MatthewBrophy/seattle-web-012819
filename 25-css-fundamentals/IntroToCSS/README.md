@@ -41,18 +41,3 @@ Chaining/Multiple selectors:
 * Discuss the benefits of using a CSS framework (less code, less work for you!)
 * Incorporate Bootstrap or Semantic UI into your code using a CDN,  give a brief example of the capabilities by adding a navbar or button styling
 
-
-float:left;
-padding: 30px;
-border: 40px solid green;
-border-left : 40px solid pink;
-margin-right: 50px;
-margin-left:70px;
-
-
-/* <link rel="stylesheet" href="styles.css"> */
-/* background-image : url(images/confTree2.jpeg); */
-/* grid-tempalate-colums : repeat(autofill, minmax(300px 1fr)); */
-/* display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-grid-gap: 20px; */
