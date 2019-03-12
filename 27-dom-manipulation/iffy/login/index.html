@@ -1,0 +1,38 @@
+<h1>Social Website</h1>
+
+<div id="logged-out">
+  <p>You are not logged in</p>
+</div>
+
+<div id="logged-in">
+  <p>
+    You are logged in as <span id="username">{username}</span>
+    via <span id="network">{social network}</span>
+  </p>
+</div>
+
+<div class="login-option">
+  <h3>Google Login</h3>
+  <p>
+    <input id="username-google" type="text" />
+    <button id="login-google">Login with Google</button>  
+  </p>
+</div>
+
+<div class="login-option">
+  <h3>Facebook Login</h3>
+  <p>
+    <input id="username-facebook" type="text" />
+    <button id="login-facebook">Login with Facebook</button>  
+  </p>
+</div>
+
+<div>
+  <p>
+    <button id="logout">Logout</button>  
+  </p>
+<div>
+
+<script src="./main.js"></script>
+<script src="./google.js"></script>
+<script src="./facebook.js"></script>

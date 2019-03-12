@@ -1,0 +1,16 @@
+
+<%= form_for(@recipe)  do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <br>
+  <%= f.label :category_id %><br>
+  <% # collection_select  (output name, source collection, value field, display field) %>
+<!--  <%#= f.collection_select(:category_id, Category.all, :id, :title) %><br>-->
+<!--  <%#= f.collection_check_boxes(:category_id, Category.all, :id, :title) %><br>-->
+
+
+  <%= f.collection_radio_buttons(:category_id, Category.all, :id, :title) %><br>
+
+
+
+<% end %>

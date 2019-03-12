@@ -1,0 +1,27 @@
+<% if flash[:notice] %>
+  <p style='color:green'>
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+
+<div>
+  Name: <%= @crew_member.name %>
+</div>
+<div>
+  Position: <%= @crew_member.position %>
+</div>
+<div>
+  Postings: <%= @crew_member.posting_number %>
+</div>
+<div>
+  Ship: <%= @crew_member.ship.name %>
+</div>
+
+<h4>Degrees</h4>
+<ul>
+  <% @crew_member.degrees.each do |degree| %>
+    <li>
+      <%= degree.name %>
+    </li>
+  <% end %>
+</ul>

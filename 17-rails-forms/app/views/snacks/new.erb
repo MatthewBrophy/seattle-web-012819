@@ -1,0 +1,16 @@
+<h1>New Snack!</h1>
+<%= form_for @snack do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :deliciousness %>
+  <%= f.number_field :deliciousness, min: 1 %>
+  <%= f.submit %>
+<% end %>
+
+<%= form_tag snacks_path do %>
+  <%= label_tag :name  %>
+  <%= text_field_tag :name %>
+  <%= label_tag :deliciousness %>
+  <%= number_field_tag :deliciousness, nil, min: 1 %>
+  <%= submit_tag 'Create' %>
+<% end %>

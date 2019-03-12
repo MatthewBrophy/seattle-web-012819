@@ -1,0 +1,16 @@
+<h2>
+  <%= @ship.name %>
+</h2>
+
+<p>
+  <%= @ship.commission_date.strftime("%d-%m-%Y") %>
+</p>
+
+<h4>Crew Members</h4>
+<ul>
+  <% @ship.crew_members.each do |crew| %>
+    <li>
+      <%= link_to crew.name, crew %>
+    </li>
+  <% end %>
+</ul>
